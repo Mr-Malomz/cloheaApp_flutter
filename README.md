@@ -1,16 +1,16 @@
 # cloheaApp_flutter
 
-A new Flutter project.
+CloheaApp is a mobile application that facilitate managing and scheduling medical appointments.
 
-## Getting Started
+This project is part of my plan to expand and explore my knowledge in mobile application (Flutter and Dart).
 
-This project is a starting point for a Flutter application.
+Link to mockup https://www.figma.com/file/0576FObTfwXWEzoq482mYA/CloheaApp?node-id=0%3A1
 
-A few resources to get you started if this is your first Flutter project:
+## My goals for this project
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-   Get started with flutter and mobile development
+-   Flutter architecture and project setup
+-   State management in flutter
+-   Navigation
+-   Animation
+-   Networking
