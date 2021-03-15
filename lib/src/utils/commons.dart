@@ -1,3 +1,4 @@
+import 'package:cloheaApp_flutter/src/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class HonSpacer extends StatelessWidget {
@@ -18,6 +19,22 @@ class VerSpacer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: size,
+    );
+  }
+}
+
+class HeaderMain extends StatelessWidget {
+  final String text;
+  HeaderMain({@required this.text});
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: primary,
+        fontWeight: FontWeight.w800,
+        fontSize: 24.0,
+      ),
     );
   }
 }

@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 
 class OutlineBtn extends StatelessWidget {
   final String text;
-  OutlineBtn({@required this.text});
+  Function routeChange;
+  OutlineBtn({@required this.text, this.routeChange});
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
       height: 36.0,
       minWidth: 136.0,
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: () {
+          routeChange();
+        },
         style: OutlinedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -33,16 +36,35 @@ class OutlineBtn extends StatelessWidget {
 
 class FillBtn extends StatelessWidget {
   final String text;
-  FillBtn({@required this.text});
+  Function routeChange;
+  FillBtn({@required this.text, this.routeChange});
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: () {},
+        onPressed: () {
+          routeChange();
+        },
         style: TextButton.styleFrom(
             backgroundColor: primary, minimumSize: Size(162.0, 36.0)),
         child: Text(
           text,
           style: TextStyle(fontWeight: FontWeight.w700, color: white),
         ));
+  }
+}
+
+class ArrowButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+        alignment: Alignment.centerLeft,
+        icon: Icon(
+          Icons.arrow_back,
+          color: black,
+          size: 24.0,
+        ),
+        onPressed: () {
+          Navigator.pop(context);
+        });
   }
 }

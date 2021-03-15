@@ -1,3 +1,4 @@
+import 'package:cloheaApp_flutter/src/screens/login.dart';
 import 'package:cloheaApp_flutter/src/utils/buttons.dart';
 import 'package:cloheaApp_flutter/src/utils/colors.dart';
 import 'package:cloheaApp_flutter/src/utils/commons.dart';
@@ -85,7 +86,16 @@ class _LandingState extends State<Landing> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        OutlineBtn(text: 'LOGIN'),
+                        OutlineBtn(
+                          text: 'LOGIN',
+                          routeChange: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()),
+                            );
+                          },
+                        ),
                         HonSpacer(size: 20.0),
                         FillBtn(text: 'REGISTER')
                       ],
