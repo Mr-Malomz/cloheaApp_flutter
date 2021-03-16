@@ -1,6 +1,7 @@
-import 'package:cloheaApp_flutter/src/utils/buttons.dart';
+import 'package:cloheaApp_flutter/src/widgets/buttons.dart';
 import 'package:cloheaApp_flutter/src/utils/colors.dart';
-import 'package:cloheaApp_flutter/src/utils/commons.dart';
+import 'package:cloheaApp_flutter/src/widgets/commons.dart';
+import 'package:cloheaApp_flutter/src/widgets/inputs.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,6 +10,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  //global identifier for forms
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +31,33 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       ArrowButton(),
                       VerSpacer(size: 60.0),
-                      HeaderMain(text: 'Welcome Back,')
+                      HeaderMain(text: 'Welcome Back,'),
+                      VerSpacer(size: 30.0),
+                      Form(
+                        key: _formKey,
+                        child: Column(
+                          children: [
+                            InputFormField(
+                              title: 'Email',
+                              hinText: 'me@yahoo.com',
+                              isEmail: true,
+                            ),
+                            VerSpacer(size: 30.0),
+                            InputFormField(
+                              title: 'Password',
+                              hinText: 'enter password',
+                              isPassword: true,
+                            ),
+                            VerSpacer(size: 30.0),
+                            LongFillBtn(
+                              text: 'LOG IN',
+                              funcCall: () {
+                                if (_formKey.currentState.validate()) {}
+                              },
+                            )
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),

@@ -8,3 +8,4 @@ const Color doctor = Color(0xff1F0977);
 const Color finance = Color(0xff096A77);
 const Color emergency = Color(0xff771709);
 const Color gray = Color(0xffEAEBEC);
+const Color dark = Color(0xff828282);

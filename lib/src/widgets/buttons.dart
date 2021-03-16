@@ -45,7 +45,44 @@ class FillBtn extends StatelessWidget {
           routeChange();
         },
         style: TextButton.styleFrom(
-            backgroundColor: primary, minimumSize: Size(162.0, 36.0)),
+          backgroundColor: primary,
+          minimumSize: Size(162.0, 36.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(6.0),
+              topLeft: Radius.circular(6.0),
+              topRight: Radius.circular(6.0),
+            ),
+          ),
+        ),
+        child: Text(
+          text,
+          style: TextStyle(fontWeight: FontWeight.w700, color: white),
+        ));
+  }
+}
+
+class LongFillBtn extends StatelessWidget {
+  final String text;
+  Function funcCall;
+  LongFillBtn({@required this.text, this.funcCall});
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+        onPressed: () {
+          funcCall();
+        },
+        style: TextButton.styleFrom(
+          backgroundColor: primary,
+          minimumSize: Size(MediaQuery.of(context).size.width, 36.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(6.0),
+              topLeft: Radius.circular(6.0),
+              topRight: Radius.circular(6.0),
+            ),
+          ),
+        ),
         child: Text(
           text,
           style: TextStyle(fontWeight: FontWeight.w700, color: white),

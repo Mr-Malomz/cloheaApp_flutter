@@ -1,7 +1,7 @@
 import 'package:cloheaApp_flutter/src/screens/login.dart';
-import 'package:cloheaApp_flutter/src/utils/buttons.dart';
+import 'package:cloheaApp_flutter/src/widgets/buttons.dart';
 import 'package:cloheaApp_flutter/src/utils/colors.dart';
-import 'package:cloheaApp_flutter/src/utils/commons.dart';
+import 'package:cloheaApp_flutter/src/widgets/commons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -89,10 +89,9 @@ class _LandingState extends State<Landing> {
                         OutlineBtn(
                           text: 'LOGIN',
                           routeChange: () {
-                            Navigator.push(
+                            Navigator.pushNamed(
                               context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginPage()),
+                              '/login',
                             );
                           },
                         ),

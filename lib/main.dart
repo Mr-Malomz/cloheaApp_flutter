@@ -1,4 +1,5 @@
 import 'package:cloheaApp_flutter/src/screens/landing.dart';
+import 'package:cloheaApp_flutter/src/screens/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +10,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'CLOHEA App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Landing(),
+      routes: {
+        '/': (context) => Landing(),
+        '/login': (context) => LoginPage(),
+      },
     );
   }
 }
