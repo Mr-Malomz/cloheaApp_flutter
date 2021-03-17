@@ -1,10 +1,12 @@
 import 'package:cloheaApp_flutter/src/utils/colors.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class InputFormField extends StatelessWidget {
-  var isEmail;
+  bool isEmail;
   bool isPassword;
+  bool isPhoneNum;
   final String title;
   final String hinText;
 
@@ -13,6 +15,7 @@ class InputFormField extends StatelessWidget {
     this.hinText,
     this.isEmail: false,
     this.isPassword: false,
+    this.isPhoneNum: false,
   });
 
   @override
@@ -40,7 +43,7 @@ class InputFormField extends StatelessWidget {
                   : null;
             } else {
               if (value.isEmpty) {
-                return 'Please enter some text';
+                return 'Please enter your $title';
               }
               return null;
             }
@@ -49,6 +52,7 @@ class InputFormField extends StatelessWidget {
             hintText: hinText,
             hintStyle: TextStyle(
               color: Color(0xff4F4F4F),
+              fontSize: 14.0,
             ),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: dark, width: 1.0),
@@ -59,6 +63,8 @@ class InputFormField extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 16.0),
           ),
           obscureText: isPassword,
+          inputFormatters:
+              isPhoneNum ? [FilteringTextInputFormatter.digitsOnly] : null,
         )
       ],
     );

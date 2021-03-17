@@ -89,14 +89,16 @@ class _LandingState extends State<Landing> {
                         OutlineBtn(
                           text: 'LOGIN',
                           routeChange: () {
-                            Navigator.pushNamed(
-                              context,
-                              '/login',
-                            );
+                            Navigator.pushNamed(context, '/login');
                           },
                         ),
                         HonSpacer(size: 20.0),
-                        FillBtn(text: 'REGISTER')
+                        FillBtn(
+                          text: 'REGISTER',
+                          routeChange: () {
+                            Navigator.pushNamed(context, '/register');
+                          },
+                        )
                       ],
                     )
                   ],

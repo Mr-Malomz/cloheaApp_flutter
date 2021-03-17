@@ -1,15 +1,15 @@
-import 'package:cloheaApp_flutter/src/widgets/buttons.dart';
 import 'package:cloheaApp_flutter/src/utils/colors.dart';
+import 'package:cloheaApp_flutter/src/widgets/buttons.dart';
 import 'package:cloheaApp_flutter/src/widgets/commons.dart';
 import 'package:cloheaApp_flutter/src/widgets/inputs.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   //global identifier for forms
   final _formKey = GlobalKey<FormState>();
 
@@ -31,16 +31,32 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     ArrowButton(),
                     VerSpacer(size: 60.0),
-                    HeaderMain(text: 'Welcome Back,'),
+                    HeaderMain(text: 'Create Account'),
                     VerSpacer(size: 30.0),
                     Form(
                       key: _formKey,
                       child: Column(
                         children: [
                           InputFormField(
+                            title: 'Firstname',
+                            hinText: 'enter your firstname',
+                          ),
+                          VerSpacer(size: 30.0),
+                          InputFormField(
+                            title: 'Surname',
+                            hinText: 'enter your surname',
+                          ),
+                          VerSpacer(size: 30.0),
+                          InputFormField(
                             title: 'Email',
                             hinText: 'me@yahoo.com',
                             isEmail: true,
+                          ),
+                          VerSpacer(size: 30.0),
+                          InputFormField(
+                            title: 'Phone Number',
+                            hinText: 'enter your phone number',
+                            isPhoneNum: true,
                           ),
                           VerSpacer(size: 30.0),
                           InputFormField(
@@ -50,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           VerSpacer(size: 30.0),
                           LongFillBtn(
-                            text: 'LOG IN',
+                            text: 'REGISTER',
                             funcCall: () {
                               if (_formKey.currentState.validate()) {}
                             },
@@ -60,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Don’t have an account?',
+                                'Already have an account?',
                                 style: TextStyle(
                                   color: black,
                                   fontWeight: FontWeight.w600,
@@ -69,10 +85,10 @@ class _LoginPageState extends State<LoginPage> {
                               HonSpacer(size: 10.0),
                               InkWell(
                                 onTap: () {
-                                  Navigator.pushNamed(context, '/register');
+                                  Navigator.pushNamed(context, '/login');
                                 },
                                 child: Text(
-                                  'Register',
+                                  'Login',
                                   style: TextStyle(
                                     color: primary,
                                     fontWeight: FontWeight.w600,
@@ -80,19 +96,6 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ),
                             ],
-                          ),
-                          VerSpacer(size: 30.0),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, '');
-                            },
-                            child: Text(
-                              'Forgot Password?',
-                              style: TextStyle(
-                                color: black,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
                           ),
                         ],
                       ),

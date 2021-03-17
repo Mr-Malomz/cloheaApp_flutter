@@ -1,5 +1,6 @@
 import 'package:cloheaApp_flutter/src/screens/landing.dart';
 import 'package:cloheaApp_flutter/src/screens/login.dart';
+import 'package:cloheaApp_flutter/src/screens/register.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Landing(),
         '/login': (context) => LoginPage(),
+        '/register': (context) => RegisterPage(),
       },
     );
   }
