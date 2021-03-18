@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                           VerSpacer(size: 30.0),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '');
+                              Navigator.pushNamed(context, '/forgotPassword');
                             },
                             child: Text(
                               'Forgot Password?',
