@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                                 'Don’t have an account?',
                                 style: TextStyle(
                                   color: black,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
                               HonSpacer(size: 10.0),

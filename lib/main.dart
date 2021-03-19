@@ -3,6 +3,7 @@ import 'package:cloheaApp_flutter/src/screens/forgotPassword.dart';
 import 'package:cloheaApp_flutter/src/screens/landing.dart';
 import 'package:cloheaApp_flutter/src/screens/login.dart';
 import 'package:cloheaApp_flutter/src/screens/newPassword.dart';
+import 'package:cloheaApp_flutter/src/screens/otppage.dart';
 import 'package:cloheaApp_flutter/src/screens/register.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/forgotPassword': (context) => ForgotPasswordPage(),
         '/newPassword': (context) => NewPasswordPage(),
         '/congratulation': (context) => CongratulationPage(),
+        '/otp': (context) => OTPPage(),
       },
     );
   }
