@@ -53,6 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                             text: 'LOG IN',
                             funcCall: () {
                               if (_formKey.currentState.validate()) {}
+                              Navigator.pushNamed(context, '/home');
                             },
                           ),
                           VerSpacer(size: 30.0),
