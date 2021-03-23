@@ -63,7 +63,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     VerSpacer(size: 30.0),
-                    AppointmentBtn(onClick: () {}),
+                    AppointmentBtn(onClick: () {
+                      Navigator.pushNamed(context, '/manageAppointment');
+                    }),
                     VerSpacer(size: 30.0),
                     MedicalBtn(onClick: () {}),
                     VerSpacer(size: 30.0),
