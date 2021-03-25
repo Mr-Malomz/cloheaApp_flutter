@@ -23,7 +23,9 @@ class ManageAppointment extends StatelessWidget {
                     VerSpacer(size: 60.0),
                     LongFillBtn(
                       text: 'SCHEDULE AN APPOINTMENT',
-                      funcCall: () {},
+                      funcCall: () {
+                        Navigator.pushNamed(context, '/newAppointment');
+                      },
                     ),
                     VerSpacer(size: 30.0),
                     AppointDivider(

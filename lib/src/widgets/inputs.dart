@@ -70,3 +70,197 @@ class InputFormField extends StatelessWidget {
     );
   }
 }
+
+class InputTextAreaField extends StatelessWidget {
+  final String title;
+  final String hinText;
+
+  InputTextAreaField({@required this.title, this.hinText});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              title,
+              style: TextStyle(
+                color: black,
+                fontWeight: FontWeight.w500,
+              ),
+            )),
+        Container(
+          height: 120.0,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: TextFormField(
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
+              expands: true,
+              validator: (value) {
+                if (value.isEmpty) {
+                  return 'Please enter your $title';
+                }
+                return null;
+              },
+              decoration: InputDecoration(
+                hintText: hinText,
+                hintStyle: TextStyle(
+                  color: Color(0xff4F4F4F),
+                  fontSize: 14.0,
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: dark, width: 1.0),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: primary, width: 2.0),
+                ),
+                contentPadding: EdgeInsets.only(left: 16.0),
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class DateCustomPicker extends StatefulWidget {
+  final String title;
+  Function datePicker;
+
+  DateCustomPicker({@required this.title, this.datePicker});
+
+  @override
+  _DateCustomPickerState createState() => _DateCustomPickerState();
+}
+
+class _DateCustomPickerState extends State<DateCustomPicker> {
+  DateTime selectedDate;
+
+  _selectDate(BuildContext context) async {
+    final DateTime picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2025),
+      errorFormatText: 'Enter valid date',
+      errorInvalidText: 'Enter date in valid range',
+    );
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+      });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            widget.title,
+            style: TextStyle(
+              color: black,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(color: dark),
+            ),
+          ),
+          child: ListTile(
+            onTap: () {
+              _selectDate(context);
+            },
+            leading: Icon(
+              Icons.calendar_today_rounded,
+              color: dark,
+            ),
+            title: Align(
+                child: Text(
+              selectedDate != null
+                  ? "${selectedDate.toLocal()}".split(' ')[0]
+                  : '',
+              style: TextStyle(
+                color: black,
+                fontWeight: FontWeight.w400,
+              ),
+            )),
+            trailing: Icon(
+              Icons.arrow_drop_down,
+              color: dark,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class DropDownCustom extends StatefulWidget {
+  final String title;
+  List<Map<String, dynamic>> list;
+
+  DropDownCustom({@required this.title, @required this.list});
+
+  @override
+  _DropDownCustomState createState() => _DropDownCustomState();
+}
+
+class _DropDownCustomState extends State<DropDownCustom> {
+  String dropDownValue;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            widget.title,
+            style: TextStyle(
+              color: black,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        DropdownButtonFormField(
+          value: dropDownValue,
+          items: widget.list
+              .map<DropdownMenuItem<String>>(
+                (Map<String, dynamic> selected) => DropdownMenuItem(
+                  child: Text(selected['name']),
+                  value: selected['id'],
+                ),
+              )
+              .toList(),
+          onChanged: (String value) {
+            setState(() {
+              dropDownValue = value;
+            });
+          },
+          isExpanded: true,
+          icon: Icon(
+            Icons.arrow_drop_down,
+            color: dark,
+          ),
+          decoration: InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: dark, width: 1.0),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: primary, width: 2.0),
+            ),
+            contentPadding: EdgeInsets.only(right: 16.0),
+          ),
+        ),
+      ],
+    );
+  }
+}

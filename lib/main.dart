@@ -4,6 +4,7 @@ import 'package:cloheaApp_flutter/src/screens/home.dart';
 import 'package:cloheaApp_flutter/src/screens/landing.dart';
 import 'package:cloheaApp_flutter/src/screens/login.dart';
 import 'package:cloheaApp_flutter/src/screens/manageAppointment.dart';
+import 'package:cloheaApp_flutter/src/screens/newAppointment.dart';
 import 'package:cloheaApp_flutter/src/screens/newPassword.dart';
 import 'package:cloheaApp_flutter/src/screens/otppage.dart';
 import 'package:cloheaApp_flutter/src/screens/register.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/otp': (context) => OTPPage(),
         '/home': (context) => HomePage(),
         '/manageAppointment': (context) => ManageAppointment(),
+        '/newAppointment': (context) => NewAppointment(),
       },
     );
   }

@@ -39,6 +39,27 @@ class HeaderMain extends StatelessWidget {
   }
 }
 
+class HeaderMini extends StatelessWidget {
+  final String title;
+  Color color;
+
+  HeaderMini({@required this.title, @required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        title,
+        style: TextStyle(
+          color: color,
+          fontSize: 16.0,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+}
+
 class AppointDivider extends StatelessWidget {
   final String title;
   Function ontap;

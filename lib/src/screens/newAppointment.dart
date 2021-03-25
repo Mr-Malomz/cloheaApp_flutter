@@ -4,12 +4,12 @@ import 'package:cloheaApp_flutter/src/widgets/commons.dart';
 import 'package:cloheaApp_flutter/src/widgets/inputs.dart';
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatefulWidget {
+class NewAppointment extends StatefulWidget {
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  _NewAppointmentState createState() => _NewAppointmentState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _NewAppointmentState extends State<NewAppointment> {
   //global identifier for forms
   final _formKey = GlobalKey<FormState>();
 
@@ -30,52 +30,29 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: [
                     ArrowButton(),
                     VerSpacer(size: 60.0),
-                    HeaderMain(text: 'Create Account'),
-                    VerSpacer(size: 30.0),
+                    HeaderMini(title: 'New Appointment', color: primary),
+                    VerSpacer(size: 60.0),
                     Form(
                       key: _formKey,
                       child: Column(
                         children: [
-                          InputFormField(
-                            title: 'Firstname',
-                            hinText: 'enter your firstname',
+                          DateCustomPicker(title: 'Preffered Date'),
+                          VerSpacer(size: 40.0),
+                          DropDownCustom(
+                            title: 'Select From Favourite Doctor',
+                            list: [
+                              {'id': '001', 'name': 'Dr Lola'},
+                              {'id': '002', 'name': 'Dr Ahmed'},
+                              {'id': '003', 'name': 'Dr Shwan'},
+                              {'id': '004', 'name': 'Dr Vincent'},
+                            ],
                           ),
-                          VerSpacer(size: 30.0),
-                          InputFormField(
-                            title: 'Surname',
-                            hinText: 'enter your surname',
-                          ),
-                          VerSpacer(size: 30.0),
-                          InputFormField(
-                            title: 'Email',
-                            hinText: 'me@yahoo.com',
-                            isEmail: true,
-                          ),
-                          VerSpacer(size: 30.0),
-                          InputFormField(
-                            title: 'Phone Number',
-                            hinText: 'enter your phone number',
-                            isPhoneNum: true,
-                          ),
-                          VerSpacer(size: 30.0),
-                          InputFormField(
-                            title: 'Password',
-                            hinText: 'enter password',
-                            isPassword: true,
-                          ),
-                          VerSpacer(size: 30.0),
-                          LongFillBtn(
-                            text: 'REGISTER',
-                            funcCall: () {
-                              if (_formKey.currentState.validate()) {}
-                            },
-                          ),
-                          VerSpacer(size: 30.0),
+                          VerSpacer(size: 15.0),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                'Already have an account?',
+                                'No Favourite yet?',
                                 style: TextStyle(
                                   color: black,
                                   fontWeight: FontWeight.w400,
@@ -83,11 +60,9 @@ class _RegisterPageState extends State<RegisterPage> {
                               ),
                               HonSpacer(size: 10.0),
                               InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(context, '/login');
-                                },
+                                onTap: () {},
                                 child: Text(
-                                  'Login',
+                                  'Find a doctor',
                                   style: TextStyle(
                                     color: primary,
                                     fontWeight: FontWeight.w600,
@@ -95,6 +70,17 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ),
                               ),
                             ],
+                          ),
+                          VerSpacer(size: 30.0),
+                          InputFormField(title: 'Title of Appointment'),
+                          VerSpacer(size: 30.0),
+                          InputTextAreaField(title: 'Other Details'),
+                          VerSpacer(size: 30.0),
+                          LongFillBtn(
+                            text: 'SCHEDULE APPOINTMENT',
+                            funcCall: () {
+                              if (_formKey.currentState.validate()) {}
+                            },
                           ),
                         ],
                       ),

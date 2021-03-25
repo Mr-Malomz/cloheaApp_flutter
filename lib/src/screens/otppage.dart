@@ -21,7 +21,6 @@ class _OTPPageState extends State<OTPPage> {
         child: ListView(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
