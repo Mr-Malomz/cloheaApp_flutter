@@ -66,7 +66,9 @@ class _HomePageState extends State<HomePage> {
                       Navigator.pushNamed(context, '/manageAppointment');
                     }),
                     VerSpacer(size: 30.0),
-                    MedicalBtn(onClick: () {}),
+                    MedicalBtn(onClick: () {
+                      Navigator.pushNamed(context, '/medicalHistory');
+                    }),
                     VerSpacer(size: 30.0),
                     FindDoctorBtn(onClick: () {}),
                     VerSpacer(size: 30.0),

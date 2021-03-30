@@ -67,7 +67,8 @@ class FillBtn extends StatelessWidget {
 class LongFillBtn extends StatelessWidget {
   final String text;
   Function funcCall;
-  LongFillBtn({@required this.text, this.funcCall});
+  Color color;
+  LongFillBtn({@required this.text, this.funcCall, this.color: primary});
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -75,7 +76,7 @@ class LongFillBtn extends StatelessWidget {
           funcCall();
         },
         style: TextButton.styleFrom(
-          backgroundColor: primary,
+          backgroundColor: color,
           minimumSize: Size(MediaQuery.of(context).size.width, 36.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -171,7 +172,7 @@ class AppointmentBtn extends StatelessWidget {
                     '9',
                     style: TextStyle(
                       color: white,
-                      fontSize: 32.0,
+                      fontSize: 24.0,
                       fontWeight: FontWeight.w700,
                     ),
                   )
@@ -371,7 +372,7 @@ class FinanacialHistBtn extends StatelessWidget {
                     '₦ 30,000',
                     style: TextStyle(
                       color: white,
-                      fontSize: 32.0,
+                      fontSize: 24.0,
                       fontWeight: FontWeight.w700,
                     ),
                   )

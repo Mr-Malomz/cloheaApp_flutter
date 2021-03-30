@@ -196,3 +196,73 @@ class AppointFeeds extends StatelessWidget {
     );
   }
 }
+
+class TableRowWithLink extends StatelessWidget {
+  final String title;
+  final String date;
+  final String route;
+  Color bgColor;
+
+  TableRowWithLink({
+    @required this.title,
+    @required this.date,
+    @required this.route,
+    this.bgColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          height: 40.0,
+          decoration: BoxDecoration(
+            color: bgColor,
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(6.0),
+              topLeft: Radius.circular(6.0),
+              topRight: Radius.circular(6.0),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    color: black,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                HonSpacer(size: 20.0),
+                Text(
+                  date,
+                  style: TextStyle(
+                    color: black,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                HonSpacer(size: 82.0),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/$route');
+                  },
+                  child: Text(
+                    'View',
+                    style: TextStyle(
+                      color: medical,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        VerSpacer(size: 10.0)
+      ],
+    );
+  }
+}
