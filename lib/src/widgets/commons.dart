@@ -202,12 +202,16 @@ class TableRowWithLink extends StatelessWidget {
   final String date;
   final String route;
   Color bgColor;
+  final bool isLink;
+  final String amount;
 
   TableRowWithLink({
     @required this.title,
     @required this.date,
-    @required this.route,
+    this.route,
     this.bgColor,
+    this.isLink: true,
+    this.amount,
   });
 
   @override
@@ -245,18 +249,26 @@ class TableRowWithLink extends StatelessWidget {
                   ),
                 ),
                 HonSpacer(size: 82.0),
-                InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/$route');
-                  },
-                  child: Text(
-                    'View',
-                    style: TextStyle(
-                      color: medical,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
+                isLink
+                    ? InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/$route');
+                        },
+                        child: Text(
+                          'View',
+                          style: TextStyle(
+                            color: medical,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      )
+                    : Text(
+                        amount,
+                        style: TextStyle(
+                          color: black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
               ],
             ),
           ),

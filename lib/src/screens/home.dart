@@ -36,19 +36,24 @@ class _HomePageState extends State<HomePage> {
                           ),
                           onPressed: () {},
                         ),
-                        Container(
-                          width: 34.0,
-                          child: CircleAvatar(
-                            radius: 34.0 / 2,
-                            backgroundImage:
-                                NetworkImage('https://via.placeholder.com/150'),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/profile');
+                          },
+                          child: Container(
+                            width: 34.0,
+                            child: CircleAvatar(
+                              radius: 34.0 / 2,
+                              backgroundImage: NetworkImage(
+                                  'https://via.placeholder.com/150'),
+                            ),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: primary,
+                                  width: 3.0,
+                                )),
                           ),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: primary,
-                                width: 3.0,
-                              )),
                         ),
                       ],
                     ),
@@ -72,7 +77,9 @@ class _HomePageState extends State<HomePage> {
                     VerSpacer(size: 30.0),
                     FindDoctorBtn(onClick: () {}),
                     VerSpacer(size: 30.0),
-                    FinanacialHistBtn(onClick: () {}),
+                    FinanacialHistBtn(onClick: () {
+                      Navigator.pushNamed(context, '/financialHistory');
+                    }),
                     VerSpacer(size: 30.0),
                     EmergencyBtn(onClick: () {}),
                   ],

@@ -1,4 +1,5 @@
 import 'package:cloheaApp_flutter/src/screens/congratulation.dart';
+import 'package:cloheaApp_flutter/src/screens/financialHistory.dart';
 import 'package:cloheaApp_flutter/src/screens/forgotPassword.dart';
 import 'package:cloheaApp_flutter/src/screens/home.dart';
 import 'package:cloheaApp_flutter/src/screens/landing.dart';
@@ -9,6 +10,7 @@ import 'package:cloheaApp_flutter/src/screens/medicalHistory.dart';
 import 'package:cloheaApp_flutter/src/screens/newAppointment.dart';
 import 'package:cloheaApp_flutter/src/screens/newPassword.dart';
 import 'package:cloheaApp_flutter/src/screens/otppage.dart';
+import 'package:cloheaApp_flutter/src/screens/profile.dart';
 import 'package:cloheaApp_flutter/src/screens/register.dart';
 import 'package:flutter/material.dart';
 
@@ -39,6 +41,8 @@ class MyApp extends StatelessWidget {
         '/newAppointment': (context) => NewAppointment(),
         '/medicalHistory': (context) => MedicalHistory(),
         '/medicalDetails': (context) => MedicalDetails(),
+        '/financialHistory': (context) => FinancialHistory(),
+        '/profile': (context) => Profile(),
       },
     );
   }
