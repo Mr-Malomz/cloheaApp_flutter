@@ -81,7 +81,9 @@ class _HomePageState extends State<HomePage> {
                       Navigator.pushNamed(context, '/financialHistory');
                     }),
                     VerSpacer(size: 30.0),
-                    EmergencyBtn(onClick: () {}),
+                    EmergencyBtn(onClick: () {
+                      Navigator.pushNamed(context, '/contact');
+                    }),
                   ],
                 ),
               ),
