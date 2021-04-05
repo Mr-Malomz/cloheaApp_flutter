@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class InputFormField extends StatelessWidget {
-  bool isEmail;
-  bool isPassword;
-  bool isPhoneNum;
+  final bool isEmail;
+  final bool isPassword;
+  final bool isPhoneNum;
   final String title;
   final String hinText;
 
@@ -128,7 +128,7 @@ class InputTextAreaField extends StatelessWidget {
 
 class DateCustomPicker extends StatefulWidget {
   final String title;
-  Function datePicker;
+  final Function datePicker;
 
   DateCustomPicker({@required this.title, this.datePicker});
 
@@ -205,7 +205,7 @@ class _DateCustomPickerState extends State<DateCustomPicker> {
 
 class DropDownCustom extends StatefulWidget {
   final String title;
-  List<Map<String, dynamic>> list;
+  final List<Map<String, dynamic>> list;
 
   DropDownCustom({@required this.title, @required this.list});
 

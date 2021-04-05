@@ -2,7 +2,6 @@ import 'package:cloheaApp_flutter/src/utils/colors.dart';
 import 'package:cloheaApp_flutter/src/widgets/buttons.dart';
 import 'package:cloheaApp_flutter/src/widgets/commons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatefulWidget {
   @override

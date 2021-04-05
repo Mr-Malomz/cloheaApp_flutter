@@ -41,7 +41,7 @@ class HeaderMain extends StatelessWidget {
 
 class HeaderMini extends StatelessWidget {
   final String title;
-  Color color;
+  final Color color;
 
   HeaderMini({@required this.title, @required this.color});
 
@@ -62,8 +62,8 @@ class HeaderMini extends StatelessWidget {
 
 class AppointDivider extends StatelessWidget {
   final String title;
-  Function ontap;
-  Color color;
+  final Function ontap;
+  final Color color;
 
   AppointDivider({@required this.title, this.ontap, @required this.color});
   @override
@@ -115,11 +115,11 @@ class AppointFeeds extends StatelessWidget {
   final String title;
   final String address;
   final String time;
-  Color bgColor;
-  Color iconColor;
-  bool hasTime;
-  IconData icon;
-  Color timeColor;
+  final Color bgColor;
+  final Color iconColor;
+  final bool hasTime;
+  final IconData icon;
+  final Color timeColor;
 
   AppointFeeds({
     @required this.title,
@@ -201,7 +201,7 @@ class TableRowWithLink extends StatelessWidget {
   final String title;
   final String date;
   final String route;
-  Color bgColor;
+  final Color bgColor;
   final bool isLink;
   final String amount;
 

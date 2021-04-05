@@ -82,7 +82,7 @@ class Contact extends StatelessWidget {
 class CopyWidget extends StatelessWidget {
   final String title;
   final String content;
-  Function onCopy;
+  final Function onCopy;
 
   CopyWidget({@required this.title, @required this.content, this.onCopy});
 
@@ -190,7 +190,7 @@ class AddressWidget extends StatelessWidget {
 class SocialsWidget extends StatelessWidget {
   final String title;
   final String asset;
-  Color color;
+  final Color color;
 
   SocialsWidget({
     @required this.title,

@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 
 class OutlineBtn extends StatelessWidget {
   final String text;
-  Function routeChange;
+  final Function routeChange;
   OutlineBtn({@required this.text, this.routeChange});
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class OutlineBtn extends StatelessWidget {
 
 class FillBtn extends StatelessWidget {
   final String text;
-  Function routeChange;
+  final Function routeChange;
   FillBtn({@required this.text, this.routeChange});
   @override
   Widget build(BuildContext context) {
@@ -66,8 +66,8 @@ class FillBtn extends StatelessWidget {
 
 class LongFillBtn extends StatelessWidget {
   final String text;
-  Function funcCall;
-  Color color;
+  final Function funcCall;
+  final Color color;
   LongFillBtn({@required this.text, this.funcCall, this.color: primary});
   @override
   Widget build(BuildContext context) {
@@ -110,7 +110,7 @@ class ArrowButton extends StatelessWidget {
 }
 
 class AppointmentBtn extends StatelessWidget {
-  Function onClick;
+  final Function onClick;
   AppointmentBtn({this.onClick});
   @override
   Widget build(BuildContext context) {
@@ -187,7 +187,7 @@ class AppointmentBtn extends StatelessWidget {
 }
 
 class MedicalBtn extends StatelessWidget {
-  Function onClick;
+  final Function onClick;
   MedicalBtn({this.onClick});
   @override
   Widget build(BuildContext context) {
@@ -249,7 +249,7 @@ class MedicalBtn extends StatelessWidget {
 }
 
 class FindDoctorBtn extends StatelessWidget {
-  Function onClick;
+  final Function onClick;
   FindDoctorBtn({this.onClick});
   @override
   Widget build(BuildContext context) {
@@ -318,7 +318,7 @@ class FindDoctorBtn extends StatelessWidget {
 }
 
 class FinanacialHistBtn extends StatelessWidget {
-  Function onClick;
+  final Function onClick;
   FinanacialHistBtn({this.onClick});
   @override
   Widget build(BuildContext context) {
@@ -387,7 +387,7 @@ class FinanacialHistBtn extends StatelessWidget {
 }
 
 class EmergencyBtn extends StatelessWidget {
-  Function onClick;
+  final Function onClick;
   EmergencyBtn({this.onClick});
   @override
   Widget build(BuildContext context) {
