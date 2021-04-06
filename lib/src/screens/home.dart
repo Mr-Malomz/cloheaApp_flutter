@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                     }),
                     VerSpacer(size: 30.0),
                     EmergencyBtn(onClick: () {
-                      Navigator.pushNamed(context, '/contact');
+                      Navigator.pushNamed(context, '/about');
                     }),
                   ],
                 ),

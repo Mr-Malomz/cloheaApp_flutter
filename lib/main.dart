@@ -1,5 +1,7 @@
+import 'package:cloheaApp_flutter/src/screens/aboutUs.dart';
 import 'package:cloheaApp_flutter/src/screens/congratulation.dart';
 import 'package:cloheaApp_flutter/src/screens/contact.dart';
+import 'package:cloheaApp_flutter/src/screens/emergency.dart';
 import 'package:cloheaApp_flutter/src/screens/financialHistory.dart';
 import 'package:cloheaApp_flutter/src/screens/forgotPassword.dart';
 import 'package:cloheaApp_flutter/src/screens/home.dart';
@@ -45,6 +47,8 @@ class MyApp extends StatelessWidget {
         '/financialHistory': (context) => FinancialHistory(),
         '/profile': (context) => Profile(),
         '/contact': (context) => Contact(),
+        '/about': (context) => AboutUs(),
+        '/emergency': (context) => EmergencyContact(),
       },
     );
   }
