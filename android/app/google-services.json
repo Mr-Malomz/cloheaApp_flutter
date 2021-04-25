@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "189900004088",
+    "project_id": "cloheaapp-flutter",
+    "storage_bucket": "cloheaapp-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189900004088:android:32a55c624a0e9df6c1f90d",
+        "android_client_info": {
+          "package_name": "com.example.cloheaApp_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189900004088-nhfjc1k1anv8ts38h8s5pi6n28c0t0kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNb2B5Jy90m8nyFJ0NM5woM88QT4EzXrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189900004088-nhfjc1k1anv8ts38h8s5pi6n28c0t0kj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "189900004088-jllneijnfnhikic6cjvc8a221d2c93q7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cloheaAppFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
